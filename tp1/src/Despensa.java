@@ -33,22 +33,23 @@ public class Despensa {
     }
 
 
-    public void getIngrediente(String nombreIngrediente, int cantidad) {
+    public Ingrediente getIngrediente(String nombreIngrediente, int cantidad) {
         for (int i = 0; i < contador; i++) {
             if (ingredientes[i].getNombre().equals(nombreIngrediente)) {
                 Ingrediente ingredienteEnDespensa = ingredientes[i];
                 if (ingredienteEnDespensa.getCantidad() >= cantidad) {
-                    // Reducir la cantidad del ingrediente en la despensa
                     ingredienteEnDespensa.sacar(cantidad);
-                    return; // No es necesario devolver nada, simplemente salimos del método
+                    return ingredienteEnDespensa;
                 } else {
                     System.out.println("No hay suficiente cantidad de " + nombreIngrediente + " en la despensa.");
-                    return; // Salir del método si no hay suficiente cantidad
+                    return null; //
                 }
             }
         }
         System.out.println("El ingrediente " + nombreIngrediente + " no está presente en la despensa.");
+        return null;
     }
+
     public void mostrarDespensa() {
         System.out.println("Contenido de la despensa:");
         for (int i = 0; i < contador; i++) {
