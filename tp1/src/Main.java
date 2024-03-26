@@ -20,7 +20,17 @@ public class Main {
         despensa.mostrarDespensa();
         despensa.addIngrediente(new Ingrediente("Harina", 750));
         despensa.mostrarDespensa();
-        
+        // Mostrar informacion de las recetas
+        HuevoDuro huevoDuro = new HuevoDuro();
+        Pan pan = new Pan();
+        Pizza pizza = new Pizza();
+        System.out.println("Detalles de la recetas:");
+        System.out.println("Huevo Duro");
+        System.out.println(huevoDuro.toString());
+        System.out.println("Pizza:");
+        System.out.println(pizza.toString());
+        System.out.println("Pan:");
+        System.out.println(pan.toString());
 
 
 
